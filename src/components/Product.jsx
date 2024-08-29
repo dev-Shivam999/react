@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { useParams } from "react-router";
-import { f, lol, r } from "../stroe/data";
+import { f, r } from "../stroe/data";
 
 const Product = () => {
   const { id } = useParams();
@@ -23,7 +23,7 @@ const Product = () => {
                 ? dispatch(r(info.id))
                 : dispatch(f(info))
             }
-            className="p-2 my-3 bg-amber-500">
+            className="p-2 my-3 bg-white text-black mix-blend-difference">
             {fa.some((pro) => pro.id == info.id) ? "remove" : "Add to cart"}
           </button>
         </div>

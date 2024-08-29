@@ -9,7 +9,7 @@ const Cart = () => {
    const dispatch=useDispatch()
   
     useEffect(()=>{
-      ab(products.reduce((acc, pcc) => acc + pcc.price, 0));
+      ab(products.reduce((acc, pcc) => acc + Number(pcc.price), 0));
     },[products])
     return (
         <div>
@@ -18,7 +18,7 @@ const Cart = () => {
                     <div className=" flex  gap-[50px] items-center justify-center text-center flex-wrap ">
                         {products.map((product) => (
                             <div key={product.id} className="w-[300px] h-[300px]">
-                                <img className="w-full h-[200px]" src={product.image} alt={product.title} />
+                                <img className=" mix-blend-difference w-full h-[200px]" src={product.image} alt={product.title} />
                                 <h2>{product.title}</h2>
                                 <h2>{product.price} $</h2>
                                 <button onClick={() => dispatch(r(product.id))} className="p-2 my-3 bg-amber-500">remove to cart</button>
